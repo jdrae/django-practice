@@ -8,3 +8,8 @@
 
 * /restful
     * https://www.django-rest-framework.org/tutorial/quickstart/
+
+* /mysite
+    * https://docs.djangoproject.com/ko/3.1/intro/
+    * `python manage.py sqlmigrate polls 0001`
+    * `python manage.py shell`
