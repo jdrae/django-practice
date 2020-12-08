@@ -15,6 +15,7 @@
     * `python manage.py shell`
     * https://docs.djangoproject.com/ko/3.1/ref/models/expressions/#avoiding-race-conditions-using-f
     * `python manage.py test polls`
+    * `python setup.py sdist `
 
 
 * read more
