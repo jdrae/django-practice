@@ -13,3 +13,5 @@
     * https://docs.djangoproject.com/ko/3.1/intro/
     * `python manage.py sqlmigrate polls 0001`
     * `python manage.py shell`
+    * https://docs.djangoproject.com/ko/3.1/ref/models/expressions/#avoiding-race-conditions-using-f
+    
