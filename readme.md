@@ -15,5 +15,8 @@
     * `python manage.py shell`
     * https://docs.djangoproject.com/ko/3.1/ref/models/expressions/#avoiding-race-conditions-using-f
     * `python manage.py test polls`
+
+
+* read more
     * https://docs.djangoproject.com/ko/3.1/topics/testing/advanced/#topics-testing-code-coverage
-    
+    * https://docs.djangoproject.com/ko/3.1/howto/static-files/deployment/
