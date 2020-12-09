@@ -8,7 +8,8 @@ class PostAdmin(admin.ModelAdmin):
     search_fields = ['title', 'contents']
 
     fieldsets = [
-        (None,      {'fields': ['title', 'contents']}),
+        (None,          {'fields': ['title', 'contents']}),
+        ("Upload File", {'fields':['uploaded_file']})
     ]
 
 admin.site.register(Post, PostAdmin)

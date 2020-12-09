@@ -23,6 +23,12 @@
         <div style="border: 1px solid #999; border-radius: 3px;">
             <p>{{post.contents}}</p>
         </div>
+    {% if post.uploaded_file %}
+    <div class="col-12 text-right">
+        <span>첨부파일 &nbsp;</span>
+        <a href="{% url 'blog:file_download' post.id %}" >{{ post.get_file_name|truncatechars:30 }}</a>
+    </div>
+    {% endif %}
     </div>
     
 </body>
