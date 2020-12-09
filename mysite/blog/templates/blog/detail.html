@@ -1,0 +1,29 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'blog/style.css '%}">
+</head>
+<body>
+
+    <!-- BOARD -->
+    <div id="board-wrapper" class="board-wrapper">
+        <div class="notice-title">
+            <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1 6h2v8h-2v-8zm1 12.25c-.69 0-1.25-.56-1.25-1.25s.56-1.25 1.25-1.25 1.25.56 1.25 1.25-.56 1.25-1.25 1.25z"/></svg>
+            <span>공지사항</span>
+        </div>
+    </div>
+    <!-- board -->
+    <div id="detail" class="board-wrapper">
+        <h3>{{post.title}}</h3> <span>{{post.pub_date | date:"Y.m.d H:i"}}</span>
+        <div style="border: 1px solid #999; border-radius: 3px;">
+            <p>{{post.contents}}</p>
+        </div>
+    </div>
+    
+</body>
+</html>
