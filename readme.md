@@ -17,6 +17,10 @@
     * `python manage.py test polls`
     * `python setup.py sdist `
 
+* /blog
+    * [file download](https://parkhyeonchae.github.io/2020/04/12/django-project-24/)
+    * [pagination](https://docs.djangoproject.com/en/3.1/topics/pagination/)
+
 
 * read more
     * https://docs.djangoproject.com/ko/3.1/topics/testing/advanced/#topics-testing-code-coverage

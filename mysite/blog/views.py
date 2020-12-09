@@ -22,11 +22,12 @@ def download_view(request, pk):
         raise Http404
 
 class IndexView(generic.ListView):
+    paginate_by = 5
     template_name='blog/index.html'
     context_object_name='post_list'
 
     def get_queryset(self):
-        return Post.objects.order_by('-id')[:5]
+        return Post.objects.order_by('-id')
 
 
 class DetailView(generic.DetailView):
