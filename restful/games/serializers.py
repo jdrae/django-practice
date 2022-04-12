@@ -1,5 +1,29 @@
+from django.contrib.auth.models import User
 from rest_framework import serializers
+
 from .models import Game, GameCategory, PlayerScore, Player
+
+
+class UserGameSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Game
+        fields = (
+            'url',
+            'name'
+        )
+
+
+class UserSerializer(serializers.HyperlinkedModelSerializer):
+    games = UserGameSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = User
+        fields = (
+            'url',
+            'pk',
+            'username',
+            'games'
+        )
 
 
 # game = Game()
@@ -27,13 +51,18 @@ class GameCategorySerializer(serializers.HyperlinkedModelSerializer):
 
 
 class GameSerializer(serializers.HyperlinkedModelSerializer):
+    # 게임을 생성하면 소유자가 자동으로 채워지고, 변경할 수 없으므로 readonly
+    owner = serializers.ReadOnlyField(source='owner.username')
     # 카테고리의 이름만
     game_category = serializers.SlugRelatedField(queryset=GameCategory.objects.all(), slug_field='name')
 
     class Meta:
         model = Game
+        # id 값 대신 json 객체를 여러개 포함할 수 있도록 ?
+        depth = 4
         fields = (
             'url',
+            'owner',
             'game_category',
             'name',
             'release_date',
