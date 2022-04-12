@@ -7,7 +7,7 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'celeryproj.settings')
 
 app = Celery('celeryproj')
 app.config_from_object('django.conf:settings', namespace='CELERY') # 환경설정 적용
-app.autodiscover_tasks(lambda: settings.INSTALLED_APPS) #  INSTALLED_APP 에 있는 장고 앱 자동으로 인식
+app.autodiscover_tasks() #  INSTALLED_APP 에 있는 장고 앱 자동으로 인식
 
 @app.task(bind=True)
 def debug_task(self):
