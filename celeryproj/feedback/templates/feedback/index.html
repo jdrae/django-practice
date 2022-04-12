@@ -1,0 +1,6 @@
+<a href="{% url 'feedback' %}"><h3>Feedback</h3></a>
+<form action="{% url 'feedback' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" name="action">submit</button>
+</form>
