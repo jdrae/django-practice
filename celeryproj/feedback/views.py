@@ -6,7 +6,7 @@ from .forms import FeedbackForm
 class FeedbackView(FormView):
     template_name = 'feedback/index.html'
     form_class = FeedbackForm
-    success_url = '/'
+    success_url = '/photo'
 
     def form_valid(self, form):
         form.send_email()

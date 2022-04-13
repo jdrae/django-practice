@@ -1,0 +1,20 @@
+{% for photo in photo_list %}
+    <div style="margin: 10px; border:1px solid black">
+    <img src="{{ photo.image_url }}" alt="{{ photo.title }}">
+    <p style="font-size: 9px">{{ photo.title }}</p>
+    </div>
+{% endfor %}
+
+{% if is_paginated %}
+    <ul>
+    {% if page_obj.has_previous %}
+        <li><a href="?page={{ page_obj.previous_page_number }}{{ getvars }}{{ hashtag }}">prev</a></li>
+    {% endif %}
+    {% if page_obj.has_next %}
+        <li><a href="?page={{ page_obj.next_page_number }}{{ getvars }}{{ hashtag }}">next</a></li>
+    {% endif %}
+    </ul>
+{% endif %}
+
+
+<a href="{% url 'feedback' %}"><p>Feedback</p></a>

@@ -13,7 +13,7 @@ class FeedbackForm(forms.Form):
         if self.cleaned_data['honeypot']:
             return False
         # 유저가 사이트를 계속 이용하는 동안,
-        # 비동기적으로 이메일 전송 작업을 진행함
+        # 비동기적으로 이메일 전송 작업을 진행함(백그라운드에서)
         send_feedback_email_task.delay(
             self.cleaned_data['email'], self.cleaned_data['message']
         )

@@ -17,8 +17,10 @@ from django.contrib import admin
 from django.urls import path
 
 from feedback.views import FeedbackView
+from photos.views import PhotoView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('feedback/', FeedbackView.as_view(), name="feedback")
+    path('feedback/', FeedbackView.as_view(), name="feedback"),
+    path('photo/',PhotoView.as_view(), name="photo")
 ]

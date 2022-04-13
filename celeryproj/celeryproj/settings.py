@@ -37,7 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # custom
     'feedback.apps.FeedbackConfig',
+    'photos.apps.PhotosConfig',
+    'django_celery_beat',
 ]
 
 MIDDLEWARE = [
