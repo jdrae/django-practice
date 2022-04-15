@@ -40,7 +40,10 @@ INSTALLED_APPS = [
     # custom
     'feedback.apps.FeedbackConfig',
     'photos.apps.PhotosConfig',
+    'chat.apps.ChatConfig',
+    # third party
     'django_celery_beat',
+    'channels',
 ]
 
 MIDDLEWARE = [
@@ -139,3 +142,15 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 EMAIL_HOST = 'localhost'
 EMAIL_PORT = 1025
 DEFAULT_FROM_EMAIL = 'Darae Jang <draejang@gmail.com>'
+
+# Channels
+ASGI_APPLICATION = "celeryproj.asgi.application"
+CHANNEL_LAYERS = {
+    'default':{
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            'hosts': [('127.0.0.1', 6379)]
+        }
+    }
+}
+
